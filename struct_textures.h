@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   struct_textures.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:34:11 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/21 20:04:00 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/10/23 19:01:41 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,6 +138,7 @@ typedef	struct s_struct
 	void			*mlx_window;
 	int				frame_rate;
 	int				moves_number;
+	int				old_moves_number;
 	int				enemy_status;
 } t_struct;
 

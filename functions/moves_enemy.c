@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves_enemy.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:33:14 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/23 12:31:07 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/10/23 18:47:48 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,38 +23,37 @@ void	enemy_moves(t_struct	*game)
 		free_game(game);
 		exit (0);
 	}
-	
-	if (move == 0 && game->map[game->enemy.position.y - 1 ][game->enemy.position.x] == '0')//up
+	if (move == 0 && where_n_will_land(game, 0) == '0')
 		do_n_move(game, move);
-	if (move == 1 && game->map[game->enemy.position.y + 1][game->enemy.position.x] == '0')//down
+	if (move == 1 && where_n_will_land(game, 1) == '0')
 		do_n_move(game, move);
-	if (move == 2 && game->map[game->enemy.position.y][game->enemy.position.x+ 1] == '0')//dx
-		do_n_move(game,move);
-	if (move == 3 && game->map[game->enemy.position.y][game->enemy.position.x-1] == '0')//sx
+	if (move == 2 && where_n_will_land(game, 2) == '0')
+		do_n_move(game, move);
+	if (move == 3 && where_n_will_land(game, 3) == '0')
 		do_n_move(game, move);
 }
 
 char	where_n_will_land(t_struct *game, int n)
 {
 	int	x;
-	int y;
+	int	y;
 
 	x = game->enemy.position.x;
 	y = game->enemy.position.y;
 	if (n == 0)
-		return(game->map[y - 1][x]);
+		return (game->map[y - 1][x]);
 	else if (n == 1)
-		return(game->map[y + 1][x]);
+		return (game->map[y + 1][x]);
 	else if (n == 2)
-		return(game->map[y][x + 1]);
+		return (game->map[y][x + 1]);
 	else
-		return(game->map[y][x - 1]);
+		return (game->map[y][x - 1]);
 }
 
 void	do_n_move(t_struct	*game, int n)
 {
 	int	x;
-	int y;
+	int	y;
 
 	x = game->enemy.position.x;
 	y = game->enemy.position.y;
@@ -79,4 +78,14 @@ void	do_n_move(t_struct	*game, int n)
 		game->map[y][x - 1] = 'N';
 	}
 	game->map[y][x] = '0';
+}
+
+int	all_rocks(t_struct	*game)
+{
+	find_el(&game->enemy.position, game, 'N');
+	if (where_n_will_land(game, 0) != '0' && where_n_will_land(game, 1) != '0' \
+	&& where_n_will_land(game, 2) != '0' && where_n_will_land(game, 3) != '0')
+		return (0);
+	else
+		return (1);
 }

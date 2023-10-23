@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 15:12:51 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/21 20:06:48 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/10/23 18:10:22 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main()
 	game.moves_number = 0;
 	game.player.comp_frame_rate = -1;
 	game.mlx_instance = mlx_init();
-	enemy_status(&game);
 	get_enemy_texture(&game);
 	game.mlx_window = mlx_new_window(game.mlx_instance, game.x * 64, (game.y + 1) * 64, "so_long");
 	get_texture(&game);

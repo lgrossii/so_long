@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 17:19:39 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/21 20:15:53 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/10/23 18:50:23 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	check_move(t_struct	*game)
 		free_game(game);
 		exit(0);
 	}
-	 if (game->map[game->player.next_move.y][game->player.next_move.x] == 'E')
+	if (game->map[game->player.next_move.y][game->player.next_move.x] == 'E')
 	{
 		if (no_more_coll(game))
 			return (0);
@@ -55,22 +55,22 @@ int	check_move(t_struct	*game)
 			exit (0);
 		}
 	}
-		game->player.move = game->n_move;
-		if (game->player.move == 124 || game->player.move == 2)
-			game->player.idle = 6;
-		else if (game->player.move == 123 || game->player.move == 0)
-			game->player.idle = 4;
-		else if (game->player.move == 126 || game->player.move == 13)
-			game->player.idle = 8;
-		else
-			game->player.idle = 0;
-		game->moves_number++;
-		game->map[game->player.position.y][game->player.position.x] = '0';
-		game->map[game->player.next_move.y][game->player.next_move.x] = 'P';
+	game->player.move = game->n_move;
+	if (game->player.move == 124 || game->player.move == 2)
+		game->player.idle = 6;
+	else if (game->player.move == 123 || game->player.move == 0)
+		game->player.idle = 4;
+	else if (game->player.move == 126 || game->player.move == 13)
+		game->player.idle = 8;
+	else
+		game->player.idle = 0;
+	game->moves_number++;
+	game->map[game->player.position.y][game->player.position.x] = '0';
+	game->map[game->player.next_move.y][game->player.next_move.x] = 'P';
 	return (1);
 }
 
-int	which_n (int	n, t_struct *game)
+int	which_n(int n, t_struct *game)
 {
 	if (n == 53)
 	{

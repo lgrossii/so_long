@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   textures_all.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:45:23 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/20 16:51:23 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/10/23 19:21:11 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	texture_wall(t_struct	*game)
 {
-	game->wall.img_angle_00 = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_00.xpm",&game->size_x, &game->size_y);
-	game->wall.img_angle_0x = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_0x.xpm",&game->size_x, &game->size_y);
-	game->wall.img_angle_y0 = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_y0.xpm",&game->size_x, &game->size_y);
-	game->wall.img_angle_yx = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_yx.xpm",&game->size_x, &game->size_y);
-	game->wall.img_up = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_up.xpm",&game->size_x, &game->size_y);
-	game->wall.img_down =  mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_down.xpm",&game->size_x, &game->size_y);
-	game->wall.img_dx = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_dx.xpm",&game->size_x, &game->size_y);
-	game->wall.img_sx = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_sx.xpm",&game->size_x, &game->size_y);
+	game->wall.img_angle_00 = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_00.xpm", &game->size_x, &game->size_y);
+	game->wall.img_angle_0x = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_0x.xpm", &game->size_x, &game->size_y);
+	game->wall.img_angle_y0 = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_y0.xpm", &game->size_x, &game->size_y);
+	game->wall.img_angle_yx = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_angle_yx.xpm", &game->size_x, &game->size_y);
+	game->wall.img_up = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_up.xpm", &game->size_x, &game->size_y);
+	game->wall.img_down = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_down.xpm", &game->size_x, &game->size_y);
+	game->wall.img_dx = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_dx.xpm", &game->size_x, &game->size_y);
+	game->wall.img_sx = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_sx.xpm", &game->size_x, &game->size_y);
 	game->wall.rock = mlx_xpm_file_to_image(game->mlx_instance, "textures/wall/wall_rock", &game->size_x, &game->size_y);
 }
 
@@ -38,7 +38,6 @@ void	texture_exit(t_struct	*game)
 	game->exit.img_closed = mlx_xpm_file_to_image(game->mlx_instance, "textures/exit/exit_closed.xpm", &game->size_x, &game->size_y);
 	game->exit.img_open = mlx_xpm_file_to_image(game->mlx_instance, "textures/exit/exit_open.xpm", &game->size_x, &game->size_y);
 }
-
 
 void	get_texture(t_struct *game)
 {

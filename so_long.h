@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
+/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 12:48:12 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/21 19:52:50 by lorenzogros      ###   ########.fr       */
+/*   Updated: 2023/10/23 18:28:25 by lgrossi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include	"src/libft/libft.h"
 #include 	"stdio.h"
 #include	<math.h>
-
+#include 	"src/ft_printf/ft_printf.h"
 
 /************************************************/
 /*					map_check					*/
@@ -31,6 +31,10 @@ int	check_square(char	**map, t_struct *game);
 int	check_walls(char **map, t_struct *game);
 
 int	check_starter(char	**map);
+
+int	check_enemy(char	**map, t_struct	*game);
+
+int	check_collectable(char	**map);
 
 /************************************************/
 /*					render_animation			*/
@@ -52,8 +56,6 @@ void	render_collectable(t_struct	*game, int x, int y);
 void	find_el(t_coordinate	*element, t_struct *game, char c);
 
 int	no_more_coll(t_struct	*game);
-
-void	enemy_status(t_struct	*game);
 
 /************************************************/
 /*					MOVES						*/
@@ -90,13 +92,7 @@ void	render_player_idle_up(t_struct *game, int n);
 
 void	free_game(t_struct	*game);
 
-void	free_wall_collectable(t_struct *game);
-
-void	free_player(t_struct *game);
-
-void	free_idles(t_struct *game);
-
-void	free_enemy_textures(t_struct *game);
+void	free_map(char	**map);
 
 /************************************************/
 /*					ENEMY 						*/
@@ -116,4 +112,7 @@ void	enemy_moves(t_struct	*game);
 char	where_n_will_land(t_struct *game, int n);
 
 void	do_n_move(t_struct	*game, int n);
+
+int		all_rocks(t_struct	*game);
+
 #endif
