@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_00.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:55:34 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/23 19:14:38 by lgrossi          ###   ########.fr       */
+/*   Updated: 2024/08/29 16:12:10 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	check_square(char	**map, t_struct *game)
 	y_1 = 0;
 	while (map[y_1])
 	{
-		if (ft_strlen(map[y_1]) != game->x)
+		if ((int)ft_strlen(map[y_1]) != game-> x)
 			return (0);
 		y_1++;
 	}

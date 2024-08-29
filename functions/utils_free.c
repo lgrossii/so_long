@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_free.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lgrossi <lgrossi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: lorenzogrossi <lorenzogrossi@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:28:49 by lorenzogros       #+#    #+#             */
-/*   Updated: 2023/10/23 19:23:36 by lgrossi          ###   ########.fr       */
+/*   Updated: 2024/08/29 16:11:32 by lorenzogros      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ void	free_game(t_struct	*game)
 void	free_map(char	**map)
 {
 	int	y;
-	int	x;
 
 	y = 0;
-	x = 0;
 	while (map[y])
 		free (map[y++]);
 	free (map);
