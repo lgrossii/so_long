@@ -18,8 +18,8 @@ RESET				=	\033[0m
 ### DIRECTORIES ###############################################################
 D_FT_PRINTF			=	ft_printf
 D_LIBFT				=	libft
-GIT_REPO_LIBFT		=	https://github.com/onetrainn/libft
-GIT_REPO_FT_PRINTF	=	https://github.com/onetrainn/ft_printf
+GIT_REPO_LIBFT		=	https://github.com/lgrossii/libft
+GIT_REPO_FT_PRINTF	=	https://github.com/lgrossii/ft_printf
 ### FILES #####################################################################
 NAME		=	so_long
 SRC			=	main.c functions/textures_all.c functions/textures_player.c functions/moves.c \
